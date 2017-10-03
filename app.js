@@ -23,7 +23,7 @@ var linksData = [
     {"source": "Emerald", "target": "Rachel"}
 ];
 
-var nodes = d3.select("g")
+var nodes = d3.select("#nodes")
         .selectAll("circle")
         .data(nodesData)
         .enter()
