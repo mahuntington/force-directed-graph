@@ -24,10 +24,10 @@ var linksData = [
 ];
 
 var nodes = d3.select("#nodes")
-        .selectAll("circle")
-        .data(nodesData)
-        .enter()
-        .append("circle");
+    .selectAll("circle")
+    .data(nodesData)
+    .enter()
+    .append("circle");
 
 d3.forceSimulation()
     .nodes(nodesData)
