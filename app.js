@@ -25,6 +25,6 @@ d3.forceSimulation()
     .force("charge_force", d3.forceManyBody())
     .force("center_force", d3.forceCenter(WIDTH / 2, HEIGHT / 2)) //position centering force at center x,y coords
     .on("tick", function(){
-        nodes.attr("cx", function(d) { return d.x; })
-            .attr("cy", function(d) { return d.y; });
+        nodes.attr("cx", function(datum) { return datum.x; })
+            .attr("cy", function(datum) { return datum.y; });
     });
