@@ -29,6 +29,12 @@ var nodes = d3.select("#nodes")
     .enter()
     .append("circle");
 
+var links = d3.select("#links")
+    .selectAll("line")
+    .data(linksData)
+    .enter()
+    .append("line");
+
 d3.forceSimulation()
     .nodes(nodesData)
     .force("charge_force", d3.forceManyBody())
@@ -40,4 +46,9 @@ d3.forceSimulation()
     .on("tick", function(){
         nodes.attr("cx", function(datum) { return datum.x; })
             .attr("cy", function(datum) { return datum.y; });
+
+        links.attr("x1", function(datum) { return datum.source.x; })
+            .attr("y1", function(datum) { return datum.source.y; })
+            .attr("x2", function(datum) { return datum.target.x; })
+            .attr("y2", function(datum) { return datum.target.y; });
     });
